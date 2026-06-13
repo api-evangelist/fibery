@@ -1,0 +1,67 @@
+{
+  "provider": "fibery",
+  "blogUrl": "https://fibery.com/blog/",
+  "fetched": "2026-06-13",
+  "posts": [
+    {
+      "title": "Fibery in 2025. Finally a Good Year in Review",
+      "url": "https://fibery.com/blog/startup-diary/fibery-2025/",
+      "date": "2026-01-21",
+      "description": "The team achieved significant growth by reducing marketing spend dramatically while increasing monthly recurring revenue proportionally, focusing on positioning and product improvements rather than paid channels."
+    },
+    {
+      "title": "Metrics Fibery Team Use to Watch Customers | Part 1",
+      "url": "https://fibery.com/blog/guides/metrics-fibery-team-use-to-watch-customers/",
+      "date": "2025-12-09",
+      "description": "This guide examines the key performance indicators that reveal how workspaces function, from active user engagement to the depth of data structure implementation."
+    },
+    {
+      "title": "Why Allocation Management Is Hard to Manage?",
+      "url": "https://fibery.com/blog/guides/why-allocation-management-is-hard-to-manage/",
+      "date": "2025-10-29",
+      "description": "Resource allocation appears straightforward initially, but reveals hidden complexity when teams attempt to implement it in collaborative workspace tools."
+    },
+    {
+      "title": "CLOSED / Brand Designer (remote CET±3, $45-65k/year)",
+      "url": "https://fibery.com/blog/we-are-hiring/brand-designer/",
+      "date": "2025-10-07",
+      "description": "A recruitment post seeking a sole brand designer to develop and evolve the company's visual identity while contributing to product initiatives."
+    },
+    {
+      "title": "Can AI-First Support Deliver - or Is Human Still Essential?",
+      "url": "https://fibery.com/blog/essays/can-ai-first-support-deliver/",
+      "date": "2025-09-11",
+      "description": "This essay explores whether artificial intelligence can effectively handle customer support independently or whether human involvement remains necessary."
+    },
+    {
+      "title": "How Fibery Handles Hiring",
+      "url": "https://fibery.com/blog/essays/how-fibery-handles-hiring/",
+      "date": "2025-08-11",
+      "description": "The piece details how the hiring workspace manages the entire recruitment lifecycle from job postings through final hiring decisions."
+    },
+    {
+      "title": "How Do We Work with Customers",
+      "url": "https://fibery.com/blog/essays/how-do-we-work-with-customers/",
+      "date": "2025-08-06",
+      "description": "This article describes a customer-centric methodology focused on building products that people genuinely use and appreciate."
+    },
+    {
+      "title": "CLOSED / Customer Education Manager (remote CET±3)",
+      "url": "https://fibery.com/blog/we-are-hiring/customer-education-manager/",
+      "date": "2025-07-25",
+      "description": "A job posting for someone to create educational content and tutorials while working to simplify the product overall."
+    },
+    {
+      "title": "Fibery Vs Notion AI: Is Fibery 2x Faster & 2x Smarter?",
+      "url": "https://fibery.com/blog/fibery-vs-x/fibery-vs-notion-ai-agent/",
+      "date": "2025-05-21",
+      "description": "A comparative analysis testing both platforms' AI capabilities on identical datasets, evaluating accuracy and response times."
+    },
+    {
+      "title": "Fibery vs. Notion 2025: not Better, Just Different",
+      "url": "https://fibery.com/blog/fibery-vs-x/fibery-vs-notion-2025/",
+      "date": "2025-03-27",
+      "description": "A detailed founder-authored comparison examining where each tool excels and when switching between them makes practical sense."
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://fibery.com",
+  "name": "Fibery",
+  "description": "Fibery is a connected work management platform with a REST API and GraphQL API for managing entities, databases, automation rules, collaborative documents, and custom workflow views. It supports webhooks, file uploads, rich text operations, and real-time change history for building integrations and automating workflows.",
+  "url": "https://fibery.com",
+  "logo": "https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg",
+  "sameAs": [
+    "https://github.com/Fibery-inc",
+    "https://www.linkedin.com/company/fibery",
+    "https://x.com/fibery_io"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Fibery APIs",
+    "itemListElement": [
+      {
+        "@type": "WebAPI",
+        "name": "Fibery HTTP API",
+        "description": "Command-based REST API for managing Fibery workspace entities, databases, views, files, and automation via a single POST endpoint that accepts batches of commands.",
+        "documentation": "https://developers.fibery.com/guides/http-api/overview",
+        "url": "https://developers.fibery.com/guides/http-api/overview",
+        "provider": {
+          "@type": "Organization",
+          "name": "Fibery",
+          "url": "https://fibery.com"
+        },
+        "termsOfService": "https://fibery.com/pricing",
+        "potentialAction": {
+          "@type": "Action",
+          "name": "POST /api/commands",
+          "target": "https://{account}.fibery.io/api/commands"
+        }
+      },
+      {
+        "@type": "WebAPI",
+        "name": "Fibery GraphQL API",
+        "description": "GraphQL API for querying and mutating Fibery workspace data, with an interactive IDE for schema exploration, and support for filtering, pagination, and nested entity operations.",
+        "documentation": "https://developers.fibery.com/guides/graphql-api/overview",
+        "url": "https://developers.fibery.com/guides/graphql-api/overview",
+        "provider": {
+          "@type": "Organization",
+          "name": "Fibery",
+          "url": "https://fibery.com"
+        }
+      }
+    ]
+  },
+  "subjectOf": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Fibery in 2025. Finally a Good Year in Review",
+      "url": "https://fibery.com/blog/startup-diary/fibery-2025/",
+      "datePublished": "2026-01-21",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fibery",
+        "url": "https://fibery.com"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Metrics Fibery Team Use to Watch Customers | Part 1",
+      "url": "https://fibery.com/blog/guides/metrics-fibery-team-use-to-watch-customers/",
+      "datePublished": "2025-12-09",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fibery",
+        "url": "https://fibery.com"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Why Allocation Management Is Hard to Manage?",
+      "url": "https://fibery.com/blog/guides/why-allocation-management-is-hard-to-manage/",
+      "datePublished": "2025-10-29",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fibery",
+        "url": "https://fibery.com"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Can AI-First Support Deliver - or Is Human Still Essential?",
+      "url": "https://fibery.com/blog/essays/can-ai-first-support-deliver/",
+      "datePublished": "2025-09-11",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fibery",
+        "url": "https://fibery.com"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "How Fibery Handles Hiring",
+      "url": "https://fibery.com/blog/essays/how-fibery-handles-hiring/",
+      "datePublished": "2025-08-11",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fibery",
+        "url": "https://fibery.com"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Fibery vs. Notion 2025: not Better, Just Different",
+      "url": "https://fibery.com/blog/fibery-vs-x/fibery-vs-notion-2025/",
+      "datePublished": "2025-03-27",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fibery",
+        "url": "https://fibery.com"
+      }
+    }
+  ]
+}
