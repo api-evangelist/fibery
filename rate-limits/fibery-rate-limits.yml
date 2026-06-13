@@ -1,0 +1,45 @@
+rate_limits:
+  description: Fibery does not publish explicit per-minute or per-second API rate limits in its public documentation. The API uses a command-batch architecture where multiple operations can be submitted in a single request. Practical limits are enforced through pagination constraints and plan-tier resource quotas for automations and integrations.
+  documentation_url: https://developers.fibery.com/guides/http-api/overview
+
+  pagination:
+    top_level_query_limit:
+      description: Maximum number of entities recommended per top-level query using cursor-based pagination
+      value: 1000
+      unit: entities per request
+    collection_sub_query_limit:
+      description: Maximum number of nested collection items returned per sub-query; treat result of exactly 100 as potentially truncated
+      value: 100
+      unit: entities per request
+    note: The q/no-limit option is deprecated for top-level queries (may timeout on large databases) and planned for deprecation on collection sub-queries. Cursor-based pagination with bounded q/limit is the recommended approach.
+
+  batch_operations:
+    description: The /api/commands endpoint accepts an array of commands in a single POST request, enabling multiple read/write operations per call.
+    endpoint: https://{account}.fibery.io/api/commands
+    note: No documented limit on the number of commands per batch request, but timeouts may apply on very large datasets.
+
+  plan_based_quotas:
+    - plan: Free
+      automations: limited
+      integrations: limited
+      note: Basic automation and integration resource limits apply
+    - plan: Standard
+      automations: limited
+      integrations: limited
+      note: Higher resource limits than Free; specific numbers not published
+    - plan: Pro
+      automations: higher
+      integrations: higher
+      note: Higher limits than Standard; specific numbers not published
+    - plan: Enterprise
+      automations: unlimited
+      integrations: unlimited
+      note: No documented caps on automations or integration syncs
+
+  authentication:
+    type: Token
+    header: Authorization
+    format: "Token YOUR_TOKEN"
+    note: Tokens are generated per workspace user; invalid or revoked tokens return authentication errors
+
+  status_page: https://status.fibery.io/public-api

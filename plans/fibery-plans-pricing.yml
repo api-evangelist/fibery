@@ -1,0 +1,110 @@
+plans:
+  - name: Free
+    description: Collaborative plan for small teams with simple processes, usable indefinitely at no cost.
+    price: 0
+    currency: USD
+    per: user/month
+    billing_cycle: monthly
+    url: https://fibery.com/pricing
+    features:
+      - Up to 10 users
+      - Unlimited guests and observers
+      - 10 databases
+      - Unlimited entities
+      - 1 GB storage
+      - Public API access
+      - GraphQL API access
+      - Basic automations
+      - Basic integrations
+      - AI features (limited)
+    limits:
+      users: 10
+      databases: 10
+      storage_gb: 1
+      entity_views: 1
+
+  - name: Standard
+    description: Full-featured plan for growing teams with unlimited databases, AI, and collaboration tools.
+    price: 12
+    currency: USD
+    per: user/month
+    billing_cycle: annual
+    url: https://fibery.com/pricing
+    features:
+      - Unlimited users
+      - Unlimited guests and observers
+      - Unlimited databases
+      - Unlimited entities
+      - Unlimited storage
+      - Public API access
+      - GraphQL API access
+      - AI features included
+      - Charts and dashboards
+      - Gantt charts
+      - Whiteboards
+      - Automations (with limits)
+      - Integrations (with limits)
+      - Synced databases (Jira, Zendesk, etc.)
+      - Custom integration SDKs
+    limits:
+      users: unlimited
+      databases: unlimited
+      storage_gb: unlimited
+
+  - name: Pro
+    description: Advanced plan with user groups, JavaScript automations, advanced permissions, and unlimited version history.
+    price: 20
+    currency: USD
+    per: user/month
+    billing_cycle: annual
+    url: https://fibery.com/pricing
+    features:
+      - Everything in Standard
+      - User groups
+      - Advanced permissions
+      - JavaScript automations
+      - Unlimited version history
+      - Higher AI limits
+      - Higher automation limits
+      - Higher integration limits
+      - Custom integration SDKs
+    limits:
+      users: unlimited
+      databases: unlimited
+      storage_gb: unlimited
+
+  - name: Enterprise
+    description: Enterprise-grade plan with SSO, SCIM, unlimited automations, and dedicated customer success management.
+    price: 40
+    currency: USD
+    per: user/month
+    billing_cycle: annual
+    url: https://fibery.com/pricing
+    features:
+      - Everything in Pro
+      - Minimum 25 paid users
+      - SAML SSO
+      - SCIM provisioning
+      - Unlimited automations
+      - Unlimited integrations
+      - Dedicated customer success manager
+      - Tailored support
+      - Advanced security controls
+    limits:
+      users: unlimited
+      min_users: 25
+      databases: unlimited
+      storage_gb: unlimited
+      automations: unlimited
+      integrations: unlimited
+
+discounts:
+  - type: Startup
+    description: 6 months free on Pro plan for companies under 42 employees
+    url: https://fibery.com/pricing
+  - type: Non-profit / Education
+    description: 50% discount for non-profit, educational, and Ukrainian organizations
+    url: https://fibery.com/pricing
+  - type: Open-source
+    description: 100% discount for open-source projects
+    url: https://fibery.com/pricing

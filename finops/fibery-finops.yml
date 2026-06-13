@@ -1,0 +1,82 @@
+finops:
+  description: Financial operations guidance for managing Fibery API and platform costs across teams and integrations.
+  url: https://fibery.com/pricing
+
+  cost_model:
+    type: Per-seat SaaS subscription
+    billing_cycles:
+      - monthly
+      - annual
+    notes:
+      - Annual billing is typically cheaper than monthly; exact discount percentage not published
+      - Guests and observers are free on all paid plans (unlimited)
+      - Only active paid members count toward per-seat billing
+
+  plans_summary:
+    - name: Free
+      price_usd: 0
+      per: user/month
+      api_access: true
+      notes: Limited to 10 users and 10 databases; suitable for evaluation and small projects
+
+    - name: Standard
+      price_usd: 12
+      per: user/month
+      billing: annual
+      api_access: true
+      notes: Unlimited databases, AI included, custom integration SDKs; automations and integrations have resource caps
+
+    - name: Pro
+      price_usd: 20
+      per: user/month
+      billing: annual
+      api_access: true
+      notes: Adds JavaScript automations, advanced permissions, user groups, unlimited version history
+
+    - name: Enterprise
+      price_usd: 40
+      per: user/month
+      billing: annual
+      minimum_seats: 25
+      api_access: true
+      notes: Unlimited automations and integrations, SAML SSO, SCIM, dedicated CSM
+
+  cost_optimization:
+    - recommendation: Use the Free plan for prototyping and proof-of-concept integrations before committing to a paid tier
+      impact: Eliminates initial spend during development
+
+    - recommendation: Add external collaborators as guests rather than paid members to avoid per-seat charges
+      impact: Guests and observers are free on all plans
+
+    - recommendation: Choose annual billing over monthly to reduce per-seat costs
+      impact: Cost reduction through annual commitment
+
+    - recommendation: Leverage the batch command architecture (/api/commands accepts arrays) to minimize API call overhead in automations
+      impact: Operational efficiency; fewer roundtrips per workflow
+
+    - recommendation: Apply for startup, non-profit, educational, or open-source discounts where eligible
+      impact: Up to 100% discount (open-source) or 50% (non-profit/education)
+
+    - recommendation: Upgrade to Enterprise only when SAML SSO, SCIM, or unlimited automation quotas are required
+      impact: Avoids $40/seat cost until governance or scale requirements justify it
+
+  discounts:
+    - type: Startup
+      value: "6 months free on Pro"
+      eligibility: Companies with fewer than 42 employees
+      url: https://fibery.com/pricing
+
+    - type: Non-profit / Education / Ukrainian orgs
+      value: "50% off"
+      eligibility: Verified non-profit, educational institution, or Ukrainian organization
+      url: https://fibery.com/pricing
+
+    - type: Open-source
+      value: "100% off"
+      eligibility: Active open-source projects
+      url: https://fibery.com/pricing
+
+  cost_visibility:
+    - Seat counts and plan tier are visible in workspace billing settings
+    - Automation and integration usage quotas are enforced by plan tier but specific counters are not publicly documented
+    - Status page (https://status.fibery.io) provides uptime visibility but not cost dashboards
