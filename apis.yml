@@ -1,73 +1,82 @@
 aid: fibery
 name: Fibery
-description: Fibery is a connected work management platform with a REST API and GraphQL API for managing entities, databases, automation rules, collaborative documents, and custom workflow views. It supports webhooks, file uploads, rich text operations, and real-time change history for building integrations and automating workflows.
+description: Fibery is a connected work management platform with a REST API and GraphQL
+  API for managing entities, databases, automation rules, collaborative documents,
+  and custom workflow views. It supports webhooks, file uploads, rich text operations,
+  and real-time change history for building integrations and automating workflows.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/fibery/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
 specificationVersion: '0.19'
 tags:
-  - Work Management
-  - Project Management
-  - Collaboration
-  - No-Code
-  - Automation
-  - GraphQL
-  - Webhooks
+- Work Management
+- Project Management
+- Collaboration
+- No-Code
+- Automation
+- GraphQL
+- Webhooks
 apis:
-  - aid: fibery:fibery-http-api
-    name: Fibery HTTP API
-    description: Command-based REST API for managing Fibery workspace entities, databases, views, files, and automation via a single POST endpoint that accepts batches of commands.
-    humanURL: https://developers.fibery.com/guides/http-api/overview
-    baseURL: https://{account}.fibery.io/api/commands
-    tags:
-      - Entities
-      - Databases
-      - Commands
-      - Batch
-      - Webhooks
-      - Files
-    properties:
-      - type: Documentation
-        url: https://developers.fibery.com/guides/http-api/overview
-      - type: OpenAPI
-        url: https://developers.fibery.com/api-reference/openapi.json
-  - aid: fibery:fibery-graphql-api
-    name: Fibery GraphQL API
-    description: GraphQL API for querying and mutating Fibery workspace data, with an interactive IDE for schema exploration, and support for filtering, pagination, and nested entity operations.
-    humanURL: https://developers.fibery.com/guides/graphql-api/overview
-    baseURL: https://{account}.fibery.io/api/graphql
-    tags:
-      - GraphQL
-      - Queries
-      - Mutations
-      - Schema
-    properties:
-      - type: Documentation
-        url: https://developers.fibery.com/guides/graphql-api/overview
-common:
-  - type: Website
-    url: https://fibery.com
+- aid: fibery:fibery-http-api
+  name: Fibery HTTP API
+  description: Command-based REST API for managing Fibery workspace entities, databases,
+    views, files, and automation via a single POST endpoint that accepts batches of
+    commands.
+  humanURL: https://developers.fibery.com/guides/http-api/overview
+  baseURL: https://{account}.fibery.io/api/commands
+  tags:
+  - Entities
+  - Databases
+  - Commands
+  - Batch
+  - Webhooks
+  - Files
+  properties:
   - type: Documentation
-    url: https://developers.fibery.com
-  - type: GitHubOrg
-    url: https://github.com/Fibery-inc
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/fibery
-  - type: Blog
-    url: https://fibery.com/blog/
-  - type: Pricing
-    url: https://fibery.com/pricing
-  - type: StatusPage
-    url: https://status.fibery.io
-  - type: X
-    url: https://x.com/fibery_io
-  - type: Plans
-    url: plans/fibery-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/fibery-rate-limits.yml
-  - type: FinOps
-    url: finops/fibery-finops.yml
+    url: https://developers.fibery.com/guides/http-api/overview
+  - type: OpenAPI
+    url: https://developers.fibery.com/api-reference/openapi.json
+- aid: fibery:fibery-graphql-api
+  name: Fibery GraphQL API
+  description: GraphQL API for querying and mutating Fibery workspace data, with an
+    interactive IDE for schema exploration, and support for filtering, pagination,
+    and nested entity operations.
+  humanURL: https://developers.fibery.com/guides/graphql-api/overview
+  baseURL: https://{account}.fibery.io/api/graphql
+  tags:
+  - GraphQL
+  - Queries
+  - Mutations
+  - Schema
+  properties:
+  - type: Documentation
+    url: https://developers.fibery.com/guides/graphql-api/overview
+  - url: graphql/fibery-graphql.md
+    type: GraphQL
+common:
+- type: Website
+  url: https://fibery.com
+- type: Documentation
+  url: https://developers.fibery.com
+- type: GitHubOrg
+  url: https://github.com/Fibery-inc
+- type: LinkedIn
+  url: https://www.linkedin.com/company/fibery
+- type: Blog
+  url: https://fibery.com/blog/
+- type: Pricing
+  url: https://fibery.com/pricing
+- type: StatusPage
+  url: https://status.fibery.io
+- type: X
+  url: https://x.com/fibery_io
+- type: Plans
+  url: plans/fibery-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/fibery-rate-limits.yml
+- type: FinOps
+  url: finops/fibery-finops.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

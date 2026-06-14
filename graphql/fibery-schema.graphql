@@ -1,0 +1,414 @@
+# Fibery GraphQL API Schema
+#
+# NOTE: The Fibery GraphQL schema is dynamically generated per workspace.
+# Each Database created in a Fibery Space becomes a set of query and mutation
+# roots (e.g., findBugs, findFeatures, findReleases). The types and fields
+# below represent the generic structure and core scalar/object types that are
+# present in every Fibery workspace schema. Workspace-specific entity types
+# follow the same patterns shown in the example types at the bottom.
+#
+# Endpoint: https://{account}.fibery.io/api/graphql/space/{SPACE_NAME}
+# Auth: Bearer token in Authorization header
+# Docs: https://developers.fibery.com/guides/graphql/overview.md
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+# ---------------------------------------------------------------------------
+# Scalars
+# ---------------------------------------------------------------------------
+
+scalar DateTime
+scalar Date
+scalar JSON
+
+# ---------------------------------------------------------------------------
+# Enums
+# ---------------------------------------------------------------------------
+
+enum OrderDirection {
+  ASC
+  DESC
+}
+
+enum JobStatus {
+  EXECUTING
+  COMPLETED
+  FAILED
+}
+
+# ---------------------------------------------------------------------------
+# Core object types present in every workspace
+# ---------------------------------------------------------------------------
+
+"""
+Represents a Fibery user account.
+"""
+type FiberyUser {
+  id: ID!
+  name: String
+  email: String
+}
+
+"""
+Result envelope returned by most mutation actions.
+"""
+type MutationResult {
+  message: String
+  entities: [EntityRef]
+}
+
+"""
+Lightweight reference to a mutated entity.
+"""
+type EntityRef {
+  id: ID!
+  type: String
+}
+
+"""
+Rich text / collaborative document field. Content is available in multiple
+formats: plain text, Markdown, HTML, or raw JSON string.
+"""
+type RichText {
+  text: String
+  md: String
+  html: String
+  jsonString: String
+}
+
+"""
+A comment attached to a Fibery entity.
+"""
+type Comment {
+  id: ID!
+  text: String
+  md: String
+  html: String
+  jsonString: String
+  createdBy: FiberyUser
+  creationDate: DateTime
+}
+
+"""
+A file attached to a Fibery entity. The url is a pre-signed S3 URL valid for
+60 minutes from the time the query was executed.
+"""
+type File {
+  id: ID!
+  name: String
+  url: String
+  urlExpiresAt: DateTime
+  size: Int
+  mimeType: String
+}
+
+"""
+Date range value type used for date-range fields.
+"""
+type DateRange {
+  start: Date
+  end: Date
+}
+
+"""
+Date-time range value type used for date-time-range fields.
+"""
+type DateTimeRange {
+  start: DateTime
+  end: DateTime
+}
+
+"""
+Geographic location field type.
+"""
+type Location {
+  longitude: Float
+  latitude: Float
+  fullAddress: String
+}
+
+"""
+Background job handle. Use the job(id:) query to poll for completion.
+"""
+type BackgroundJob {
+  jobId: ID!
+  actions: BackgroundJobActions
+}
+
+"""
+Resolved actions from a completed background job.
+"""
+type BackgroundJobActions {
+  actionName: String
+  result: MutationResult
+}
+
+"""
+Background job status response from the job(id:) query.
+"""
+type JobResult {
+  status: JobStatus!
+  message: String
+  actions: [JobActionResult]
+}
+
+type JobActionResult {
+  actionName: String
+  result: MutationResult
+}
+
+# ---------------------------------------------------------------------------
+# Filter input types (generic; workspace schema generates per-database variants)
+# ---------------------------------------------------------------------------
+
+input StringFilter {
+  is: String
+  isNot: String
+  contains: String
+  notContains: String
+  greater: String
+  greaterOrEquals: String
+  less: String
+  lessOrEquals: String
+  in: [String]
+  notIn: [String]
+  isNull: Boolean
+}
+
+input IntFilter {
+  is: Int
+  isNot: Int
+  greater: Int
+  greaterOrEquals: Int
+  less: Int
+  lessOrEquals: Int
+  in: [Int]
+  notIn: [Int]
+  isNull: Boolean
+}
+
+input FloatFilter {
+  is: Float
+  isNot: Float
+  greater: Float
+  greaterOrEquals: Float
+  less: Float
+  lessOrEquals: Float
+  in: [Float]
+  notIn: [Float]
+  isNull: Boolean
+}
+
+input BooleanFilter {
+  is: Boolean
+  isNull: Boolean
+}
+
+input IDFilter {
+  is: ID
+  isNot: ID
+  in: [ID]
+  notIn: [ID]
+  isNull: Boolean
+}
+
+# ---------------------------------------------------------------------------
+# Query root
+#
+# The actual workspace schema will contain dynamically generated find* fields
+# for every database in every space (e.g. findBugs, findFeatures, findTasks).
+# The generic job query is always present.
+# ---------------------------------------------------------------------------
+
+type Query {
+  """
+  Poll the status of a background mutation job.
+  """
+  job(id: ID!): JobResult
+
+  # Workspace-specific find queries follow the pattern:
+  #   findXxx(
+  #     <field filters...>,
+  #     orderBy: XxxOrderBy,
+  #     limit: Int,
+  #     offset: Int
+  #   ): [Xxx]
+  #
+  # Example (Software Development space):
+  #   findBugs(name: StringFilter, state: StateFilter, limit: Int, offset: Int, orderBy: BugOrderBy): [Bug]
+  #   findFeatures(name: StringFilter, limit: Int, offset: Int): [Feature]
+  #   findReleases(name: StringFilter, releaseDate: StringFilter, limit: Int, offset: Int): [Release]
+}
+
+# ---------------------------------------------------------------------------
+# Mutation root
+#
+# Mutation roots are database-scoped. Each database gets a root field matching
+# its lowercased, pluralised name (e.g., bugs, features, releases). The root
+# accepts the same filter arguments as the find query, and exposes action
+# fields inside it.
+# ---------------------------------------------------------------------------
+
+type Mutation {
+  # Workspace-specific database mutation roots follow the pattern:
+  #   xxx(<field filters...>): XxxMutations
+  #
+  # Example:
+  #   bugs(name: StringFilter, state: StateFilter, limit: Int): BugMutations
+  #   features(name: StringFilter, limit: Int): FeatureMutations
+  #   releases(name: StringFilter, limit: Int): ReleaseMutations
+  _placeholder: String
+}
+
+# ---------------------------------------------------------------------------
+# Example entity types (Software Development space)
+#
+# These illustrate how workspace types are structured. Real workspaces will
+# have types matching their own Databases and Fields.
+# ---------------------------------------------------------------------------
+
+"""
+Example entity type: Bug (Software Development space)
+"""
+type Bug {
+  id: ID!
+  publicId: String
+  name: String
+  state: WorkflowState
+  priority: SingleSelectField
+  effort: Float
+  assignees: [FiberyUser]
+  release: Release
+  stepsToReproduce: RichText
+  comments: [Comment]
+  files: [File]
+  createdBy: FiberyUser
+  creationDate: DateTime
+  modificationDate: DateTime
+}
+
+"""
+Example entity type: Feature (Software Development space)
+"""
+type Feature {
+  id: ID!
+  publicId: String
+  name: String
+  state: WorkflowState
+  priority: SingleSelectField
+  effort: Float
+  assignees: [FiberyUser]
+  bugs: [Bug]
+  description: RichText
+  comments: [Comment]
+  files: [File]
+  createdBy: FiberyUser
+  creationDate: DateTime
+  modificationDate: DateTime
+}
+
+"""
+Example entity type: Release (Software Development space)
+"""
+type Release {
+  id: ID!
+  publicId: String
+  name: String
+  releaseDate: Date
+  startDate: Date
+  bugs: [Bug]
+  features: [Feature]
+  description: RichText
+  comments: [Comment]
+  files: [File]
+  createdBy: FiberyUser
+  creationDate: DateTime
+  modificationDate: DateTime
+}
+
+"""
+Workflow state field (single-select with workflow semantics)
+"""
+type WorkflowState {
+  id: ID!
+  name: String
+}
+
+"""
+Single-select option field
+"""
+type SingleSelectField {
+  id: ID!
+  name: String
+}
+
+# ---------------------------------------------------------------------------
+# Example mutation action types
+# ---------------------------------------------------------------------------
+
+"""
+Actions available on a Bug database mutation root.
+"""
+type BugMutations {
+  create(name: String, state: WorkflowStateInput, priority: SingleSelectInput, effort: Float): MutationResult
+  createBatch(data: [BugCreateInput]): MutationResult
+  update(name: String, state: WorkflowStateInput, priority: SingleSelectInput, effort: Float, release: ReleaseFilter): MutationResult
+  delete: MutationResult
+  assignToMe: MutationResult
+  addComment(value: String): MutationResult
+  appendContentToStepsToReproduce(value: String): MutationResult
+  overwriteContentToStepsToReproduce(value: String): MutationResult
+  prependContentToStepsToReproduce(value: String): MutationResult
+  attachPdfUsingTemplate(value: String): MutationResult
+  notifyAssignees(subject: String, message: String): MutationResult
+  notifyCreatedBy(subject: String, message: String): MutationResult
+  notifyUsers(to: UserFilter, subject: String, message: String): MutationResult
+  addFileFromUrl(name: String, url: String): MutationResult
+  moveToFinalState: MutationResult
+  linkRelease(id: IDFilter): MutationResult
+  unlinkRelease: MutationResult
+  deleteRelease: MutationResult
+  listEntities: [EntityRef]
+  countOfEntities: Int
+  executeAsBackgroundJob: BackgroundJob
+}
+
+# ---------------------------------------------------------------------------
+# Example input types
+# ---------------------------------------------------------------------------
+
+input BugCreateInput {
+  name: String
+  state: WorkflowStateInput
+  priority: SingleSelectInput
+  effort: Float
+}
+
+input WorkflowStateInput {
+  name: StringFilter
+}
+
+input SingleSelectInput {
+  name: StringFilter
+}
+
+input ReleaseFilter {
+  id: IDFilter
+  name: StringFilter
+  limit: Int
+  orderBy: ReleaseOrderBy
+}
+
+input ReleaseOrderBy {
+  releaseDate: OrderDirection
+  startDate: OrderDirection
+  name: OrderDirection
+}
+
+input UserFilter {
+  email: StringFilter
+  name: StringFilter
+}
