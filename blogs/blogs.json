@@ -1,7 +1,7 @@
 {
   "provider": "fibery",
   "blogUrl": "https://fibery.com/blog/",
-  "fetched": "2026-06-13",
+  "fetched": "2026-06-14T20:42:17Z",
   "posts": [
     {
       "title": "Fibery in 2025. Finally a Good Year in Review",
@@ -22,7 +22,7 @@
       "description": "Resource allocation appears straightforward initially, but reveals hidden complexity when teams attempt to implement it in collaborative workspace tools."
     },
     {
-      "title": "CLOSED / Brand Designer (remote CET±3, $45-65k/year)",
+      "title": "CLOSED / Brand Designer (remote CET\u00b13, $45-65k/year)",
       "url": "https://fibery.com/blog/we-are-hiring/brand-designer/",
       "date": "2025-10-07",
       "description": "A recruitment post seeking a sole brand designer to develop and evolve the company's visual identity while contributing to product initiatives."
@@ -46,7 +46,7 @@
       "description": "This article describes a customer-centric methodology focused on building products that people genuinely use and appreciate."
     },
     {
-      "title": "CLOSED / Customer Education Manager (remote CET±3)",
+      "title": "CLOSED / Customer Education Manager (remote CET\u00b13)",
       "url": "https://fibery.com/blog/we-are-hiring/customer-education-manager/",
       "date": "2025-07-25",
       "description": "A job posting for someone to create educational content and tutorials while working to simplify the product overall."
@@ -63,5 +63,13 @@
       "date": "2025-03-27",
       "description": "A detailed founder-authored comparison examining where each tool excels and when switching between them makes practical sense."
     }
-  ]
+  ],
+  "repo": "fibery",
+  "feeds": [
+    {
+      "source": "https://www.linkedin.com/company/fibery",
+      "error": "HTTPError"
+    }
+  ],
+  "post_count": 0
 }
