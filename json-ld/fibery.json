@@ -5,7 +5,7 @@
   "name": "Fibery",
   "description": "Fibery is a connected work management platform with a REST API and GraphQL API for managing entities, databases, automation rules, collaborative documents, and custom workflow views. It supports webhooks, file uploads, rich text operations, and real-time change history for building integrations and automating workflows.",
   "url": "https://fibery.com",
-  "logo": "https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg",
+  "logo": "https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg",
   "sameAs": [
     "https://github.com/Fibery-inc",
     "https://www.linkedin.com/company/fibery",
