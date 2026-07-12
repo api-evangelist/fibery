@@ -55,6 +55,10 @@ apis:
   - url: graphql/fibery-graphql.md
     type: GraphQL
 common:
+- type: TrustCenter
+  url: security/fibery-trust-center.yml
+- type: DomainSecurity
+  url: security/fibery-domain-security.yml
 - type: Website
   url: https://fibery.com
 - type: Documentation
