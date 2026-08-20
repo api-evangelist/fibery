@@ -28,6 +28,14 @@ tags:
 - No-Code
 - Automation
 - GraphQL
+- Webhook
+tags_raw:
+- Work Management
+- Project Management
+- Collaboration
+- No-Code
+- Automation
+- GraphQL
 - Webhooks
 apis:
 - aid: fibery:fibery-http-api
@@ -38,6 +46,13 @@ apis:
   humanURL: https://developers.fibery.com/guides/http-api/overview
   baseURL: https://{account}.fibery.io/api/commands
   tags:
+  - Entities
+  - Databases
+  - Commands
+  - Batch
+  - Webhook
+  - File
+  tags_raw:
   - Entities
   - Databases
   - Commands
@@ -57,6 +72,11 @@ apis:
   humanURL: https://developers.fibery.com/guides/graphql-api/overview
   baseURL: https://{account}.fibery.io/api/graphql
   tags:
+  - GraphQL
+  - Query
+  - Mutations
+  - Schema
+  tags_raw:
   - GraphQL
   - Queries
   - Mutations
