@@ -4,6 +4,17 @@ description: Fibery is a connected work management platform with a REST API and 
   API for managing entities, databases, automation rules, collaborative documents,
   and custom workflow views. It supports webhooks, file uploads, rich text operations,
   and real-time change history for building integrations and automating workflows.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
