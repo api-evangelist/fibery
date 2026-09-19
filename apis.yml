@@ -58,7 +58,7 @@ apis:
   baseURL: https://{account}.fibery.io/api/commands
   tags:
   - Entities
-  - Databases
+  - Database
   - Commands
   - Batch
   - Webhook
