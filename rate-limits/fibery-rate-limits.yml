@@ -1,3 +1,7 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (undated — the file carries no date and git cannot supply one), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
 rate_limits:
   description: Fibery does not publish explicit per-minute or per-second API rate limits in its public documentation. The API uses a command-batch architecture where multiple operations can be submitted in a single request. Practical limits are enforced through pagination constraints and plan-tier resource quotas for automations and integrations.
   documentation_url: https://developers.fibery.com/guides/http-api/overview
