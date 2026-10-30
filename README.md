@@ -64,43 +64,113 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Fibery is a connected work management platform with a REST API and GraphQL API for managing entities, databases, automation rules, collaborative documents, and custom workflow views. It supports webhooks, file uploads, rich text operations, real-time change subscriptions, and a paginated change history log for building integrations and automating workflows.
+Fibery is a connected work management platform with a REST API and GraphQL API for managing entities, databases, automation rules, collaborative documents, and custom workflow views. It supports webhooks, file uploads, rich text operations, and real-time change history for building integrations and automating workflows.
 
-## APIs
+**Areas:** Work Management · Project Management · Collaboration · No-Code · Automation · GraphQL · Webhook
 
-- **HTTP API** — Command-based REST API. All operations are POSTed to `/api/commands` as batched command arrays. Covers schema management, entity CRUD, views, files, webhooks, and history.
-- **GraphQL API** — Full GraphQL interface with an interactive IDE, supporting queries, mutations, filtering, pagination, and nested entity operations.
-- **MCP Server** — Model Context Protocol server (`fibery-mcp-server`) enabling AI assistants (including Claude) to explore workspace schema, query databases, and create/update entities.
+## Fibery on APIs.io
 
-## Authentication
+Everything profiled for Fibery is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/fibery/](https://apis.io/providers/fibery/)** — or go straight to one of the APIs or properties below.
 
-Token-based authentication via `Authorization: Token YOUR_TOKEN` header. Tokens are generated per workspace user inside Fibery settings.
+### APIs (2)
 
-## Developer Resources
+- [Fibery HTTP API](https://apis.io/apis/fibery/fibery-http-api/) — Command-based REST API for managing Fibery workspace entities, databases, views, files, and automation via a single POST endpoint that accepts batches of…
+- [Fibery GraphQL API](https://apis.io/apis/fibery/fibery-graphql-api/) — GraphQL API for querying and mutating Fibery workspace data, with an interactive IDE for schema exploration, and support for filtering, pagination, and…
 
-- Developer Docs: https://developers.fibery.com
-- HTTP API Overview: https://developers.fibery.com/guides/http-api/overview
-- GraphQL API: https://developers.fibery.com/guides/graphql-api/overview
-- OpenAPI Spec: https://developers.fibery.com/api-reference/openapi.json
-- GitHub Org: https://github.com/Fibery-inc
-- Status Page: https://status.fibery.io
-- Blog: https://fibery.com/blog/
-- Pricing: https://fibery.com/pricing
+### Published properties
 
-## Pricing
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-| Plan       | Price (USD/user/month, annual) | Notes                                      |
-|------------|--------------------------------|--------------------------------------------|
-| Free       | $0                             | Up to 10 users, 10 databases, 1 GB storage |
-| Standard   | $12                            | Unlimited databases, AI included           |
-| Pro        | $20                            | JS automations, advanced permissions       |
-| Enterprise | $40                            | Min 25 seats, SAML SSO, SCIM, unlimited automations |
+#### GraphQL (1)
 
-Special discounts: 50% for non-profits/education, 100% for open-source, 6 months free (Pro) for startups.
+GraphQL schemas.
 
-## Catalog Files
+- [Fibery GraphQL API](https://apis.io/graphqls/fibery/fibery-graphql/)
 
-- `apis.yml` — APIs.json 0.19 provider profile
-- `plans/fibery-plans-pricing.yml` — Detailed pricing plan breakdown
-- `rate-limits/fibery-rate-limits.yml` — API rate limit and pagination constraints
-- `finops/fibery-finops.yml` — FinOps cost management guidance
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Fibery Domain Security](https://apis.io/security/fibery/fibery-domain-security/)
+- [Fibery Trust Center](https://apis.io/security/fibery/fibery-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Fibery Plans Pricing](https://apis.io/plans/fibery/fibery-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Fibery Rate Limits](https://apis.io/rate-limits/fibery/fibery-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Fibery Finops](https://apis.io/finops/fibery/fibery-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://fibery.com)
+- [Documentation](https://developers.fibery.com)
+- [Pricing](https://fibery.com/pricing)
+- [Blog](https://fibery.com/blog/)
+- [Status](https://status.fibery.io)
+
+## API Evangelist rating
+
+**Kin Score 25.2** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 39.4 |
+| Contract governance | 0.0 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 26.3 |
+
+**Agent readiness 13.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/fibery/](https://apis.io/providers/fibery/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Fibery: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/fibery/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
